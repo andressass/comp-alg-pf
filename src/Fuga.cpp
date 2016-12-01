@@ -6,7 +6,7 @@
 //  Copyright © 2016 Rondinele Prado. All rights reserved.
 //
 
-#include "../include/Fuga.hpp"
+#include "../include/Fuga.h"
 #include "../include/Contraponto.h"
 
 //--------------------------------------------------------------------------------------------------

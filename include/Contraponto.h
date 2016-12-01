@@ -9,7 +9,7 @@
 #ifndef Contraponto_h
 #define Contraponto_h
 
-#include <MuMaterial.h>
+#include "../MuM-master/MuMaterial.h"
 #include "../include/Arvore.h"
 
 #define TESSITURA_SOPRANO {60,79}
