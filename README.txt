@@ -14,35 +14,17 @@
 
 1. Acesse a pasta raiz e execute
 
-	
-```
-#!shell
-
 $ ./musApp
-```
-
 
 
 2. Em caso de erro basta acessar a pasta raiz e digitar
 
-	
-```
-#!shell
-
 $ ./bin/musApp
-```
-
 
 
 3. Em caso de (re)compilação basta digitar
 
-	
-```
-#!shell
-
 $ make all
-```
-
 
 
 # DIRETORIOS #
