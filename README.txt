@@ -1,5 +1,5 @@
 #############################################################################
-# musApp
+# **musApp**
 # Alunos: 
 # Andressa Sousa da Silveira 10/0053971
 # Pedro Eugenio Guimarães Carvalho <Matricula>
@@ -10,32 +10,48 @@
 #############################################################################
 
 
-INSTRUCOES--------------------------------------------------------------------------------------------------
+# INSTRUCOES #
 
->Colocar os arquivos binários data.bin e text.bin a serem executados na pasta "files"
+1. Acesse a pasta raiz e execute
 
->Acesse a pasta raiz e execute
+	
+```
+#!shell
 
-	$ ./musApp
-
-
->Em caso de erro basta acessar a pasta raiz e digitar
-
-	$ ./bin/musApp
+$ ./musApp
+```
 
 
-> Em caso de (re)compilação basta digitar
 
-	$ make all
+2. Em caso de erro basta acessar a pasta raiz e digitar
+
+	
+```
+#!shell
+
+$ ./bin/musApp
+```
 
 
-DIRETORIOS--------------------------------------------------------------------------------------------------
 
-/bin 
+3. Em caso de (re)compilação basta digitar
+
+	
+```
+#!shell
+
+$ make all
+```
+
+
+
+# DIRETORIOS #
+
+**/bin** 
 	Neste diretorio estão contidos os arquivos binarios do sistema
 	
-/include
+**/include**
 	Neste diretorio estão contidos os arquivos de cabeçalho do sistema
 	
-/src
+## /src ##
 	Neste diretorio estão contidos os arquivos de implementação do sistema
