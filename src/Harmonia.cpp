@@ -114,7 +114,7 @@ MuMaterial Harmonia::harmonizacaoMelodia(MuMaterial melodia, int tonalidade){
                 harmonia;
     MuNote  tonica,
             nota;
-    int i = 0;
+    //int i = 0;
     float duracao = 0;
     
 //    do{
