@@ -58,7 +58,7 @@ MuMaterial geraTransformacao(MuMaterial melodia_original, short indice_transform
 		{
 			//Caso 1 Aplica a funcao Retro ao sujeito
 			case 1:
-				transformacao=melodia_original.Retro();
+				transformacao.Retro();
 			break;
 			//Caso 2 Aplica a funcao CyclePitch ao sujeito, todas as notas serao iguais as suas precedentes
 			case 2:
@@ -150,9 +150,9 @@ MuMaterial Fuga::geraExposicao(MuMaterial sujeito){
         //escolhe aleatoriamente a mudanca que sera feita no sujeito para criar o contrasujeito1
 	indice_transformacao=Between(1, 4);
 	//Invoca a funcao para gerar o primeiro contra-sujeito
-	seq.Append(0, geraContraSujeito1(&aux, indice_transformacao);, 0);
+	seq.Append(0, geraContraSujeito1(aux, indice_transformacao), 0);
 	//Invoca a funcao para gerar o segundo contra-sujeito
-	seq.Append(0, geraContraSujeito2(&aux, indice_transformacao);, 0);
+	seq.Append(0, geraContraSujeito2(aux, indice_transformacao), 0);
     
     
     //Adiciona na variavel seq

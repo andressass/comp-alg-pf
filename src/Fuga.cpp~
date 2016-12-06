@@ -56,20 +56,28 @@ MuMaterial geraTransformacao(MuMaterial melodia_original, short indice_transform
     
     switch(indice_transformacao)
 		{
+			//Caso 1 Aplica a funcao Retro ao sujeito
 			case 1:
-			transformacao=melodia_original.Retro();
+				transformacao=melodia_original.Retro();
 			break;
-
+			//Caso 2 Aplica a funcao CyclePitch ao sujeito, todas as notas serao iguais as suas precedentes
 			case 2:
-			transformacao=melodia_original.CyclePitch(1);
+				transformacao=melodia_original.CyclePitch(1);
 			break;
-
+			//caso 5 quando o contrasujeito1 passar pelo Caso 2 todas as notas do contrasujeito 2 serao as precedentes de suas 				precedentes
 			case 5:
-			transformacao=melodia_original.CyclePitch(2);
+				transformacao=melodia_original.CyclePitch(2);
 			break;
-
+			//Repete o primeiro caso por conta de peculiaridades do codigo
+			case 6:
+				transformacao=melodia_original.Retro();
+			break;
+			//Caso default, mais provavel , chama a classe que cria contraponto criada no segundo trabalho da materia
 			default:
-			//contraponto perguntar como fazer	
+				Contraponto* c = new Contraponto(melodia_original);
+    				int tessitura[] = TESSITURA_SOPRANO;
+    				c->geraPrimeiraEspecie(tessitura);
+    				transformacao = c->getContraponto();	
 			break;
 		}
     
@@ -107,7 +115,7 @@ MuMaterial geraContraSujeito2(MuMaterial sujeito, short indice_transformacao){
 	ind2=Between(2,4);
 	}
 	if (indice_transformacao == 2){
-	ind2=Between(3,5);
+	ind2=Between(3,6);
 	}
 	else{
 	ind2=Between(1,4);
@@ -139,7 +147,6 @@ MuMaterial Fuga::geraExposicao(MuMaterial sujeito){
     
     //Escolha do contra-sujeitos------------
     
-    //TODO - PEDRO - Escolhe aleatoriamente os indices
         //escolhe aleatoriamente a mudanca que sera feita no sujeito para criar o contrasujeito1
 	indice_transformacao=Between(1, 4);
 	//Invoca a funcao para gerar o primeiro contra-sujeito
@@ -164,11 +171,6 @@ MuMaterial Fuga::geraExposicao(MuMaterial sujeito){
     //seq.Append(0, aux, 0);
     //----------------------------------------
     
-    
-    aux.Clear();
-    aux = seq;
-    //aux.Retro();
-    //seq.Append(0, aux, 0);
     
     //Voz 2
     aux.Clear();
