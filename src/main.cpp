@@ -10,8 +10,8 @@
 #include "../MuM-master/MuMaterial.h"
 #include "../include/Harmonia.h"
 #include "../include/Orquestra.h"
-#include "../include/Fuga.hpp"
-#include "../include/Melodias.hpp"
+#include "../include/Fuga.h"
+#include "../include/Melodias.h"
 #include <signal.h>
 #include <unistd.h>
 

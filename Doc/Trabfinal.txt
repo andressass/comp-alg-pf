@@ -1,0 +1,52 @@
+Trabalho Final
+Grupo:
+Andressa Sousa da Silveira                 10/0053971
+Pedro Eugênio Guimarães Carvalho   14/0158197
+Rondinele Barbosa Prado                    10/0039880
+
+
+
+
+
+Introdução
+O que é Fuga musical?
+      Existe uma grande discussão sobre o que é a fuga. Seria a fuga uma forma musical ou uma técnica de composição? A opinião mais difundida é a de que a fuga é uma técnica de composição.
+      Uma fuga é baseada em um tema principal que recebe o nome de sujeito e geralmente segue um padrão estrutural constituído basicamente de 3 partes: exposição, episódio (desenvolvimento) e stretto, porém, não é necessário seguir à risca essa estrutura.
+      A apresentação do sujeito sempre acontece no início da fuga, na seção de Exposição. Esta seção é a única parte "obrigatória", presente em 100% das fugas, e sempre começa com uma voz desacompanhada cantando o sujeito da fuga. Uma vez o sujeito exposto por completo, as outras vozes começam a entrar em sequência, sempre cantando o sujeito, e sempre esperando a voz anterior concluir o tema antes de entrar. 
+      Essa impressão de que as vozes estão fugindo umas às outras (em latim, fugere) ou caçando-se (fugare) é que deu nome ao gênero. No século XVIII, outros nomes surgiram para designar a mesma coisa: ricercare, canzona, capriccio, fantasia e outros.
+      A voz que entra ao fim de cada sujeito é chamada de resposta sendo chamada de resposta tonal, quando o sujeito é alterado para caber na dominante e de resposta real quando a modificação é uma simples transposição.
+      Quando as outras vozes cantam o mesmo tema de acompanhamento para todas as entradas da resposta, damos o nome de contra-sujeito. Mas para honrar esse nome, o tema precisa ser usado com frequência no decorrer da fuga.
+
+ 
+      E assim acaba a Exposição e se tem inicio aos episódios que são trechos musicais que modulam para outros tons, preparando para próximas entradas do sujeito. Ao contrário da exposição, o compositor aqui é livre para fazer o que quiser.
+      Após o fim dos episódios começa o Stretto que é quando o sujeito aparece em todas as vozes em rápida sucessão antes de cada aparição concluir, geralmente usado como encerramento porque torna a textura mais cerrada e aumenta as possibilidades de exploração de um efeito expressivo marcante próprio para um final.
+Objetivo do trabalho
+      Queremos criar um programa que compõe músicas aleatórias a partir de um tema dado utilizando fuga.
+    
+O que o trabalho faz
+    Explicar as limitações dele
+    
+Lógica do Algoritimo
+Criar a Exposição
+	Para criar a exposição primeiro recebemos o sujeito (tema) que então passa por duas funções "geracontrasujeito1" e "geracontrasujeito2" que modificam aleatoriamente o sujeito para criar respectivamente o primeiro e o segundo contra-sujeitos.
+      As modificações no sujeito não são tão aleatórias, todas foram testadas para verificar se elas soavam bem e é dada uma predileção ao contraponto do sujeito.
+      Depois de criados os contra-sujeitos são anexados ao sujeito criando uma das vozes da exposição. Para criar as outras vozes transpõe-se essa primeira voz.
+Criar os episódios(Desenvolvimento)
+...
+Criar o Stretto
+...
+
+
+
+
+
+
+Bibliografia
+
+https://pt.wikipedia.org/wiki/Stretto
+http://www.clem.ufba.br/queiroz/fuga_01/iniciofuga.html
+http://euterpe.blog.br/analise-de-obra/entao-voce-quer-saber-o-que-e-uma-fuga
+http://paulinyi.com/anexos/musica/fuga.html
+https://pt.wikipedia.org/wiki/Fuga
+      
+   

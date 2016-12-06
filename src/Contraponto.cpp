@@ -7,7 +7,7 @@
 //
 
 #include "../include/Contraponto.h"
-#include "../include/Melodias.hpp"
+#include "../include/Melodias.h"
 #include <math.h>
 
 #define DUR_FINALIS 2.2

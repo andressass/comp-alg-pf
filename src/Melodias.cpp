@@ -6,7 +6,7 @@
 //  Copyright © 2016 Rondinele Prado. All rights reserved.
 //
 //--------------------------------------------------------------------------------------------------
-#include "../include/Melodias.hpp"
+#include "../include/Melodias.h"
 #include <math.h>
 
 short escolhe(short* vetor){
