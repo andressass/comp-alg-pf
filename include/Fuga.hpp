@@ -38,6 +38,17 @@ public:
     
     //--------------------------------------------------------------------------------------------------
     /*!
+     * Metodo responsavel por gerar o desenvolvimento da fuga
+     *
+     * \param sujeito MuMaterial contendo o sujeito da fuga
+     *
+     */
+    static MuMaterial geraDesenvolvimento(MuMaterial sujeito);
+    
+public:
+    
+    //--------------------------------------------------------------------------------------------------
+    /*!
      * Metodo responsavel por gerar uma fuga a partir de um sujeito
      *
      * \param sujeito MuMaterial contendo o sujeito da fuga

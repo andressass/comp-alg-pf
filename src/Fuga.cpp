@@ -17,19 +17,11 @@ MuMaterial Fuga::geraFuga(MuMaterial sujeito){
     
     fuga = geraExposicao(sujeito);
     
-    //Desenvolvimento
-    MuMaterial aux = sujeito;
-    aux.Fit(sujeito.Dur()*2);
-    fuga.Append(0, aux, 0);
-    aux.DiatonicTranspose(0, MAJOR_MODE, 5, ASCENDING);
-    aux.Fit(sujeito.Dur()/2);
-    fuga.Append(1, aux, 0);
-    aux.Retro();
-    fuga.Append(1, aux, 0);
+    fuga = geraDesenvolvimento(sujeito);
 
     //Finalizacao
-    aux.DiatonicTranspose(0, MAJOR_MODE, 5, ASCENDING);
     fuga.Append(0, sujeito, 0);
+    aux.DiatonicTranspose(0, MAJOR_MODE, 5, ASCENDING);
     fuga.Append(1, aux, 0);
     aux.Clear();
     aux.Append(0, sujeito.GetNote(0));
@@ -141,5 +133,27 @@ MuMaterial Fuga::geraExposicao(MuMaterial sujeito){
     seq.Append(2, aux, 0);
     seq.Move(2, 2 * (sujeito.Dur() - dur_ultima_nota));
 
+    return seq;
+}
+
+//--------------------------------------------------------------------------------------------------
+//
+MuMaterial Fuga::geraExposicao(MuMaterial sujeito){
+    
+    MuMaterial seq;
+    
+    //Obtemos o sujeito
+    seq = sujeito;
+    
+    //Desenvolvimento
+    MuMaterial aux = sujeito;
+    aux.Fit(sujeito.Dur()*2);
+    fuga.Append(0, aux, 0);
+    aux.DiatonicTranspose(0, MAJOR_MODE, 5, ASCENDING);
+    aux.Fit(sujeito.Dur()/2);
+    fuga.Append(1, aux, 0);
+    aux.Retro();
+    fuga.Append(1, aux, 0);
+    
     return seq;
 }
