@@ -62,15 +62,15 @@ MuMaterial geraTransformacao(MuMaterial melodia_original, short indice_transform
 			break;
 			//Caso 2 Aplica a funcao CyclePitch ao sujeito, todas as notas serao iguais as suas precedentes
 			case 2:
-				transformacao=melodia_original.CyclePitch(1);
+				transformacao.CyclePitch(1);
 			break;
 			//caso 5 quando o contrasujeito1 passar pelo Caso 2 todas as notas do contrasujeito 2 serao as precedentes de suas 				precedentes
 			case 5:
-				transformacao=melodia_original.CyclePitch(2);
+				transformacao.CyclePitch(2);
 			break;
 			//Repete o primeiro caso por conta de peculiaridades do codigo
 			case 6:
-				transformacao=melodia_original.Retro();
+				transformacao.Retro();
 			break;
 			//Caso default, mais provavel , chama a classe que cria contraponto criada no segundo trabalho da materia
 			default:
