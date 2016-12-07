@@ -1,5 +1,5 @@
 //
-//  Fuga.hpp
+//  Fuga.h
 //  Exerc1
 //
 //  Created by Rondinele Prado on 07.09.16.
@@ -25,6 +25,10 @@ class Fuga {
     
 private:
     
+    MuMaterial sujeito;
+    MuMaterial contra_sujeito_1;
+    MuMaterial contra_sujeito_2;
+    
     //--------------------------------------------------------------------------------------------------
     /*!
      * Metodo responsavel por gerar a exposicao da fuga
@@ -32,29 +36,38 @@ private:
      * \param sujeito MuMaterial contendo o sujeito da fuga
      *
      */
-    static MuMaterial geraExposicao(MuMaterial sujeito);
-    
-public:
+    MuMaterial geraExposicao(MuMaterial sujeito);
     
     //--------------------------------------------------------------------------------------------------
     /*!
      * Metodo responsavel por gerar o desenvolvimento da fuga
      *
      * \param sujeito MuMaterial contendo o sujeito da fuga
+     * \param mat_exposicao MuMaterial contendo o material com a exposicao jah gerada
      *
      */
-    static MuMaterial geraDesenvolvimento(MuMaterial sujeito);
+    MuMaterial geraDesenvolvimento(MuMaterial sujeito, MuMaterial mat_exposicao);
     
 public:
     
     //--------------------------------------------------------------------------------------------------
     /*!
-     * Metodo responsavel por gerar uma fuga a partir de um sujeito
+     * Metodo construtor de objetos da classe fuga
      *
      * \param sujeito MuMaterial contendo o sujeito da fuga
      *
      */
-    static MuMaterial geraFuga(MuMaterial sujeito);
+    Fuga(MuMaterial sujeito){
+        this->sujeito = sujeito;
+    }
+    
+    //--------------------------------------------------------------------------------------------------
+    /*!
+     * Metodo responsavel por gerar uma fuga a partir de um sujeito
+     *
+     *
+     */
+    MuMaterial geraFuga();
     
 };
 

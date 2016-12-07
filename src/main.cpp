@@ -54,9 +54,8 @@ int main(int argc, const char * argv[]) {
     //Melodia carregada do arquivo partitura para um objeto MuMaterial
     melodia.LoadScore("csd/m3.sco");
     
-    
-    //    float parametros[] = {G is, .5, A is, .25, G is, .25, F is, .25, G is, .25, F _u, .5, C is _u, .5,
-    //        G is, .5, F is, .25, F, .25, F is, .5, D is _u, .5, F , .5, C is _u, .5, D is, .5, C _u, .5, C is, .5 }; int numNotas = 17; //WTK3
+    //float parametros[] = {G is, .5, A is, .25, G is, .25, F is, .25, G is, .25, F _u, .5, C is _u, .5,
+    //G is, .5, F is, .25, F, .25, F is, .5, D is _u, .5, F , .5, C is _u, .5, D is, .5, C _u, .5, C is, .5 }; int numNotas = 17; //WTK3
     //short cantusFirmus[] = {60, 64, 62, 60, 65, 64, 67, 65, 64, 62, 60}; int numNotas = 11; int transp = 2;
     //float parametros[] = {60, 2, 64, 2, 65, 2, 67 ,2 , 64, 2, 69, 2, 67, 2, 64, 2, 65, 2, 64, 2, 62, 2, 60, 2}; int numNotas = 12;
     //short cantusFirmus[] = {G _d, C, H _d, G _d, C, E, D, G, E, C, D, H _d, A _d, G _d}; int numNotas = 14; int transp = 5;
@@ -64,15 +63,17 @@ int main(int argc, const char * argv[]) {
     
     //melodia = Melodias::criaMelodia(parametros, numNotas);
     
-    //melodia.Fit(20);
+    melodia.Fit(20);
     
     seq = melodia;
     
-    seq = Fuga::geraFuga(seq);
+    Fuga *fuga = new Fuga(seq);
+    
+    seq = fuga->geraFuga();
     
     //seq.Append(3, Harmonia::harmonizacaoMelodia(seq, 0), 0);
     
-    seq.Fit(150);
+    //seq.Fit(150);
     
     seq.SetAmp(3, 0.5);
     
