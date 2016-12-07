@@ -206,36 +206,36 @@ MuMaterial Melodias::VariaMelodiaAleatoriamente(MuMaterial melodia){
     MuMaterial seq = melodia;
     
     int op1 = Between(0, 100);
-    int op3 = Between(0, 100);
-    int op2 = Between(0, 100);
-    int op4 = Between(0, 100);
-    
-    short transp[] = {-4, 5}; //Transposicoes possiveis (4 desc ou 5 asc)
+//    int op3 = Between(0, 100);
+//    int op2 = Between(0, 100);
+//    int op4 = Between(0, 100);
+//    
+//    short transp[] = {-4, 5}; //Transposicoes possiveis (4 desc ou 5 asc)
     
     //Escolhemos algumas transformacoes de acordo com a probabilidade do operador
     //Variacao ritmica
     if (op1 > 50) seq.CycleRhythm(0, Between(2, (int) seq.NumberOfNotes()-2));
     if (op1 < 10) seq = decaiRitmo(seq);
     
-    //Variacao melodica
-    if (op2 > 50) seq.DiatonicTranspose(0, MAJOR_MODE, transp[Between(0, 1)], ASCENDING);
-    if (op3 > 40) seq.Retro();
-    
-    //Remove as ultimas notas e dobra a duracao
-    if (op4 > 80){
-        int numberOfNotes = (int) seq.NumberOfNotes();
-        
-        for (int i = 0; i < numberOfNotes/2; i++) seq.RemoveNote((--numberOfNotes) - i);
-        seq.Fit(seq.Dur()*2);
-    }
-    
-    //Remove as primeiras notas e dobra a duracao
-    if (op4 < 20){
-        int numberOfNotes = (int) seq.NumberOfNotes();
-        
-        for (int i = 0; i < numberOfNotes/2; i++) seq.RemoveNote(0);
-        seq.Fit(seq.Dur()*2);
-    }
+//    //Variacao melodica
+//    if (op2 > 50) seq.DiatonicTranspose(0, MAJOR_MODE, transp[Between(0, 1)], ASCENDING);
+//    if (op3 > 40) seq.Retro();
+//    
+//    //Remove as ultimas notas e dobra a duracao
+//    if (op4 > 80){
+//        int numberOfNotes = (int) seq.NumberOfNotes();
+//        
+//        for (int i = 0; i < numberOfNotes/2; i++) seq.RemoveNote((--numberOfNotes) - i);
+//        seq.Fit(seq.Dur()*2);
+//    }
+//    
+//    //Remove as primeiras notas e dobra a duracao
+//    if (op4 < 20){
+//        int numberOfNotes = (int) seq.NumberOfNotes();
+//        
+//        for (int i = 0; i < numberOfNotes/2; i++) seq.RemoveNote(0);
+//        seq.Fit(seq.Dur()*2);
+//    }
     
     return seq;
 }

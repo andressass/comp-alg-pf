@@ -48,6 +48,15 @@ private:
      */
     MuMaterial geraDesenvolvimento(MuMaterial sujeito, MuMaterial mat_exposicao);
     
+    //--------------------------------------------------------------------------------------------------
+    /*!
+     * Metodo responsavel por gerar a finalizacao da fuga
+     *
+     * \param fuga Fuga montada ate o momento
+     *
+     */
+    MuMaterial geraFinalizacao(MuMaterial fuga);
+    
 public:
     
     //--------------------------------------------------------------------------------------------------

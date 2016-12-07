@@ -76,6 +76,33 @@ public:
         
         material->SetVoice(numVoz, aux, 0);
     }
+    
+    //--------------------------------------------------------------------------------------------------
+    /*!
+     * Metodo rsponsavel por setar o bloco de paramtros necessarios para a execucao do orgao em cada
+     * uma das notas do instrumento.
+     *
+     * \param material Material com as notas a serem setadas
+     * \param numVoz numero da voz
+     */
+    static void setOrgao(MuMaterial* material, short numVoz){
+        
+        MuMaterial aux;
+        MuParamBlock params;
+        
+        for (int i = 0; i < material->GetVoice(numVoz).NumberOfNotes(); i++){
+            MuNote nota = material->GetVoice(numVoz).GetNote(i);
+            
+            params.Clear();
+            params.AddParam(201); //Pressure
+            
+            nota.SetParams(params);
+            nota.SetAmp(200);
+            aux.AddNote(nota);
+        }
+        
+        material->SetVoice(numVoz, aux, 0);
+    }
 };
 
 

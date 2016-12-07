@@ -15,13 +15,23 @@
 MuMaterial Fuga::geraFuga(){
     
     MuMaterial fuga;
-    MuMaterial aux = sujeito;
-    
+
     fuga = geraExposicao(sujeito);
     
     fuga = geraDesenvolvimento(sujeito, fuga);
     
-    //Finalizacao
+    fuga = geraFinalizacao(fuga);
+    
+    return fuga;
+}
+
+
+//--------------------------------------------------------------------------------------------------
+//
+MuMaterial Fuga::geraFinalizacao(MuMaterial fuga){
+    
+    MuMaterial aux = sujeito;
+
     fuga.Append(0, sujeito, 0);
     aux.DiatonicTranspose(0, MAJOR_MODE, 5, ASCENDING);
     fuga.Append(1, aux, 0);
@@ -32,9 +42,18 @@ MuMaterial Fuga::geraFuga(){
     aux.Fit(sujeito.Dur());
     fuga.Append(2, aux, 0);
     
+    
+    //Aumenta a duracao das ultimas notas
+    for (int i = 0; i < 3; i++) {
+        MuNote nota_final = fuga.GetVoice(i).GetNote(fuga.GetVoice(i).NumberOfNotes()-1);
+        fuga.RemoveNote(i, fuga.GetVoice(i).NumberOfNotes()-1);
+        
+        nota_final.SetDur(nota_final.Dur()+2);
+        
+        fuga.Append(i, nota_final);
+    }
     return fuga;
 }
-
 
 
 //--------------------------------------------------------------------------------------------------

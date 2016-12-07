@@ -75,11 +75,24 @@ int main(int argc, const char * argv[]) {
     
     //seq.Fit(150);
     
-    seq.SetAmp(3, 0.5);
+    //seq.SetAmp(3, 0.5);
     
-    seq.SetInstrument(0, 2);
-    seq.SetInstrument(1, 1);
-    seq.SetInstrument(2, 2);
+    seq.Transpose(-12);
+    seq.Transpose(2, -12);
+    
+    Orquestra::setOrgao(&seq, 0);
+    Orquestra::setOrgao(&seq, 1);
+    Orquestra::setOrgao(&seq, 2);
+    seq.SetAmp(2, 500);
+
+    
+    //Carrega a orquestra
+    seq.LoadOrchestra("inst/pers1.orc.txt");
+    seq.LoadFunctionTables("inst/pers1tables.tbl.txt");
+    seq.SetInstrument(0, 5);
+    seq.SetInstrument(1, 4);
+    seq.SetInstrument(2, 3);
+
     seq.Score("csd/part");
     seq.Orchestra("csd/orq");
     
