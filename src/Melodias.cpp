@@ -260,13 +260,13 @@ MuMaterial Melodias::criaMelodia(short* alturas, short duracao, short numNotas)
 
 //--------------------------------------------------------------------------------------------------
 //
-MuMaterial Melodias::criaMelodia(float* parametros, short numNotas)
+MuMaterial Melodias::criaMelodia(float* parametros)
 {
     MuMaterial melodia;
     MuNote nota;
     nota.SetAmp(.5);
     
-    for(int i = 0; i < numNotas*2 - 1; i+=2){
+    for(int i = 0; parametros[i] > 0; i+=2){
         nota.SetPitch(parametros[i]);
         nota.SetDur(parametros[i+1]);
         melodia.Append(0, nota);

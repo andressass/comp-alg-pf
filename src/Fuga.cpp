@@ -33,10 +33,12 @@ MuMaterial Fuga::geraFinalizacao(MuMaterial fuga){
     MuMaterial aux = sujeito;
 
     fuga.Append(0, sujeito, 0);
+    aux.Retro(); //Inverte para a tonica ocupar o primeiro indice
     aux.DiatonicTranspose(0, MAJOR_MODE, 5, ASCENDING);
+    aux.Retro(); //Inverte para retornar a ordem orinal
     fuga.Append(1, aux, 0);
     aux.Clear();
-    aux.Append(0, sujeito.GetNote(0));
+    aux.Append(0, sujeito.GetNote(sujeito.NumberOfNotes()-1));
     aux.Transpose(-12);
     
     aux.Fit(sujeito.Dur());
@@ -88,15 +90,15 @@ MuMaterial geraTransformacao(MuMaterial melodia_original, short indice_transform
             break;
             //Caso default, mais provavel , chama a classe que cria contraponto criada no segundo trabalho da materia
         default:
-            Contraponto* c = new Contraponto(melodia_original);
-            int tessitura[] = TESSITURA_SOPRANO;
-            c->geraPrimeiraEspecie(tessitura);
-            transformacao = c->getContraponto();
-            
-            if (transformacao.NumberOfNotes() == 0){
-                transformacao = melodia_original;
+//            Contraponto* c = new Contraponto(melodia_original);
+//            int tessitura[] = TESSITURA_SOPRANO;
+//            c->geraPrimeiraEspecie(tessitura);
+//            transformacao = c->getContraponto();
+//            
+//            if (transformacao.NumberOfNotes() == 0){
+//                transformacao = melodia_original;
                 transformacao.Retro();
-            }
+//            }
             break;
     }
     
@@ -178,7 +180,9 @@ MuMaterial Fuga::geraExposicao(MuMaterial sujeito){
     //Voz 2
     aux.Clear();
     aux = seq;
+    aux.Retro();
     aux.DiatonicTranspose(0, MAJOR_MODE, 5, ASCENDING);
+    aux.Retro();
     seq.Append(1, aux, 0);
     seq.Move(1, sujeito.Dur()- dur_ultima_nota); //Deslocamos para o final da exposição do sujeito pela voz 1
     
@@ -320,6 +324,7 @@ MuMaterial desenvolveMaterial(MuMaterial mat){
     aux.Fit(mat.Dur()/2);
     seq.Append(2, aux, 0);
     aux.Retro();
+    aux.Transpose(-12);
     seq.Append(2, aux, 0);
     
     return seq;
@@ -336,8 +341,8 @@ MuMaterial Fuga::geraDesenvolvimento(MuMaterial sujeito, MuMaterial mat_exposica
     //Desenvolvimento
     for(int i = 0; i < 3; i++){
         seq.Append(i, desenvolveMaterial(sujeito), i);
-        seq.Append(i, desenvolveMaterial(contra_sujeito_1), i);
-        seq.Append(i, desenvolveMaterial(contra_sujeito_2), i);
+        //seq.Append(i, desenvolveMaterial(contra_sujeito_1), i);
+        //seq.Append(i, desenvolveMaterial(contra_sujeito_2), i);
     }
     
     //    for(int i = 0; i < 3; i++){

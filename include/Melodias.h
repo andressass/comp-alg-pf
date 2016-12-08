@@ -105,11 +105,10 @@ public:
      * no vetor passado como parametro
      *
      * \param parametros Vetor de alturas
-     * \param numNotas numero de notas no vetor
      *
      * \return MuMaterial contendo a sequencia de notas.
      */
-    static MuMaterial criaMelodia(float* parametros, short numNotas);
+    static MuMaterial criaMelodia(float* parametros);
     
     
     //--------------------------------------------------------------------------------------------------

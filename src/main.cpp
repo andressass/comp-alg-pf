@@ -61,9 +61,21 @@ int main(int argc, const char * argv[]) {
     //short cantusFirmus[] = {G _d, C, H _d, G _d, C, E, D, G, E, C, D, H _d, A _d, G _d}; int numNotas = 14; int transp = 5;
     //short cantusFirmus[] = {A _d, C, H _d, C, D, E, C, H _d, A _d}; int numNotas = 9; int transp = 6;
     
-    //melodia = Melodias::criaMelodia(parametros, numNotas);
     
-    melodia.Fit(20);
+    float parametros[] = {E, .5, E, .5, F, .5, G, .5, G, .5, F, .5, E, .5, D, .5, C, .5, C, .5, D, .5, E, .5, E, .75, D, .25, D, 1, E, .5, E, .5, F, .5, G, .5, G, .5, F, .5, E, .5, D, .5, C, .5, C, .5, D, .5, E, .5, D, .75, C, .25, C, 1, D, 1, E, .5, C, .5, D, .5, E, .25, F, .25, E, .5, C,.5, D, .5, E, .25, F, .25, E, .5, D, .5, C, .5, D, .5, G _d, .5, E, .5, E, .5, E, .5, F, .5, G, .5, G, .5, F, .5, E, .5, D, .5, C, .5, C, .5, D, .5, E, .5, D, .75, C, .25, C, 1, -1};
+    
+//    
+//    float parametros[] = {C, .25, C, .5, E, .25, G, .25, E, .5, C, .25, D, 1, F, 1 ,
+//                          H _d, .25, H _d, .5, D, .25, F, .25, D, .5, H _d, .25, C, 1, E, 1,
+//                        C, .25, C, .5, E, .25, G, .25, E, .5, C, .25, D, 1, F, 1 ,
+//                        H _d, .25, H _d, .5, D, .25, F, .25, D, .5, H _d, .25, C, 1, E, 1
+//    };
+//    
+//    int numNotas = 16*2;
+    
+    melodia = Melodias::criaMelodia(parametros);
+    //cout << melodia.Csd();
+    melodia.Fit(30);
     
     seq = melodia;
     
@@ -77,7 +89,7 @@ int main(int argc, const char * argv[]) {
     
     //seq.SetAmp(3, 0.5);
     
-    seq.Transpose(-12);
+    //seq.Transpose(-12);
     seq.Transpose(2, -12);
     
     Orquestra::setOrgao(&seq, 0);
